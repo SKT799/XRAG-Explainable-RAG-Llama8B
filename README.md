@@ -12,7 +12,6 @@ I have built this project on open models & datasets such as Llma. A LoRA-tuned L
 
 [![Watch Demo Video](https://img.shields.io/badge/Watch-Demo_Video-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](<DEMO_VIDEO_URL>)
 &nbsp;
-[![View Source Code](https://img.shields.io/badge/View-Source_Code-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/SKT799/XRAG-Explainable-RAG-Llama8B)
 
 <br/>
 
