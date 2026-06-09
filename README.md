@@ -4,9 +4,9 @@
 
 <br/>
 
-### A retrieval-augmented answer engine that shows its work — every sentence checked against the source it cites.
+### XRAG simply means the generated answer in your RAG can be explained. I have created a citation method to cite every generated sentence so that naive users can understand from which source a fact is coming to avoid hallucinations.
 
-Built on open models, start to finish. A LoRA-tuned Llama-3.1-8B does the writing, LangGraph runs the retry loop, FAISS handles search, and an NLI model decides whether each citation actually holds up.
+I have built this project on open models & datasets such as Llma. A LoRA-tuned Llama-3.1-8B does the writing, LangGraph runs the retry loop, FAISS handles live web search and an NLI model decides whether each citation actually holds up i.e. calculating the faithfulness numerically.
 
 <br/>
 
@@ -33,13 +33,13 @@ Built on open models, start to finish. A LoRA-tuned Llama-3.1-8B does the writin
 
 ## So what is this?
 
-Plenty of RAG demos can answer a question. Far fewer can tell you whether they just made the answer up.
+Plenty of RAG demos can answer a question. Far fewer can tell you whether they just made the answer up i.e. they lack explainability.
 
-That gap is the whole reason X-RAG exists. Ask it something like *"who won the 2022 World Cup and who scored the most goals?"* and it won't just hand back a tidy paragraph. Every sentence gets checked, on its own, against the actual page it cites. The "Argentina won" claim comes back green with a trust score of 0.99 — source [8] (Wikipedia) genuinely backs it. The top-scorer line, cited to [7], flags red at 0.26 — the attribution model wasn't convinced that page actually supports it. You see both. No squinting at a wall of links trying to guess which half to trust.
+That gap is the whole reason I created X-RAG. Ask it something like *"who won the 2022 World Cup and who scored the most goals?"* and it won't just hand back a tidy paragraph. Every sentence gets checked, on its own, against the actual page it cites. The "Argentina won" claim comes back green with a trust score of 0.99 — source [8] (Wikipedia) genuinely backs it. The top-scorer line, cited to [7], flags red at 0.26 — the attribution model wasn't convinced that page actually supports it. You see both. No squinting at a wall of links trying to guess which half to trust.
 
 And when it can't find anything solid? It rewrites the question, searches again, and takes another swing. Still nothing after a few tries — it just says *"I don't know based on the sources."* Which, honestly, is the one move most chatbots will not make.
 
-No OpenAI key. No Anthropic key. Nothing behind a paywall. Clone it, open the Colab notebook, run the cells top to bottom.
+The beauty of this project is: No OpenAI key needed. No Anthropic key needed. Nothing behind a paywall. Clone it, open the Colab notebook, run the cells top to bottom.
 
 ---
 
