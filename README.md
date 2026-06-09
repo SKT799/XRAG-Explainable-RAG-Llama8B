@@ -95,12 +95,6 @@ trust = P(entailment) x sigma(reranker score)
 
 The case that matters most is high relevance with low entailment. The page is on-topic, looks completely legitimate and still doesn't support the sentence. That's textbook hallucination — and it's exactly the kind of miss a "here are your top sources" UI quietly papers over.
 
-| Cited page says it? | Was it relevant? | Flag |
-|:---:|:---:|:---|
-| yes | yes | **green** — a citation you can lean on |
-| yes | no | a coincidence, treat with caution |
-| **no** | **yes** | **red** — relevant page, wrong claim (the dangerous one) |
-| no | no | red — off in the weeds |
 
 Anything under 0.75(this we can change if needed, threshold is a hard limit that we need to control) goes red. One thing worth admitting up front: that NLI judge needed babysitting. Early on its calibration temperature ran off to about 7 and *everything* flagged red — tuned model, raw model, didn't matter. Clamping it to a sane `[0.5, 3.0]` range is what made the scores mean something again. (More on that in the [fine-tuning README](https://github.com/SKT799/LoRA-FineTuning-Llama-3.1-8B).)
 
